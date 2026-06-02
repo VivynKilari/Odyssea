@@ -1,9 +1,10 @@
+import { router } from "expo-router";
 import {
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 export default function Login() {
@@ -24,8 +25,18 @@ export default function Login() {
         style={styles.input}
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/home")}
+      >
         <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.signupButton}
+        onPress={() => router.push("/signup")}
+      >
+        <Text style={styles.signupText}>Don't have an account? Sign Up</Text>
       </TouchableOpacity>
     </View>
   );
@@ -40,19 +51,20 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: "white",
+    color: "#FFFFFF",
     fontSize: 32,
     fontWeight: "bold",
-    marginBottom: 30,
     textAlign: "center",
+    marginBottom: 30,
   },
 
   input: {
-    backgroundColor: "#1E293B",
-    color: "white",
+    backgroundColor: "#172033",
+    color: "#FFFFFF",
     padding: 16,
     borderRadius: 12,
     marginBottom: 15,
+    fontSize: 16,
   },
 
   button: {
@@ -60,11 +72,22 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     alignItems: "center",
+    marginTop: 10,
   },
 
   buttonText: {
-    color: "white",
+    color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "600",
+  },
+
+  signupButton: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+
+  signupText: {
+    color: "#94A3B8",
+    fontSize: 14,
   },
 });
