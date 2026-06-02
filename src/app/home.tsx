@@ -43,7 +43,10 @@ export default function Home() {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity
+        style={styles.card}
+        onPress={() => router.push("/profile")}
+>
         <Text style={styles.cardTitle}>👤 Profile</Text>
         <Text style={styles.cardText}>
           Manage your account and rides
